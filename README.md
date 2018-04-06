@@ -4,4 +4,4 @@
 
 The best tic tac toe game you will ever see
 
-[I'm an inline-style link with title](http://the-best-tic-tac-toe.surge.sh/ "Check it out!")
+[Check it out live!](http://the-best-tic-tac-toe.surge.sh/ "Check it out!")
