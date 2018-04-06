@@ -1,0 +1,30 @@
+.title{
+  text-align: center;
+  padding: 20px;
+  background-color: rgb(0, 0, 0);
+  color: white;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 30pt;
+}
+
+.board{
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+  align-content: center;
+  width: 300px;
+  margin: 10vh auto;
+  box-shadow: 6px -5px 29px -4px rgba(0,0,0,0.23);
+}
+
+.square{
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 30px;
+  font-size: 20pt;
+  height: 100px;
+  width: 100px;
+  box-sizing: border-box;
+}
