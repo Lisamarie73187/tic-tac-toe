@@ -111,12 +111,53 @@
 }
 
 .winnerModal {
-  box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.39);
   background-color: white;
+  box-shadow: 0px 0px 25px -2px rgba(0,0,0,0.39);
   position: absolute;
   top: 20%;
-  bottom: 20%;
-  left: 20%;
-  right: 20%;
+  bottom: 40%;
+  left: 35%;
+  right: 35%;
+  border-radius: 20px;
+  opacity: 1;
+}
 
+.winnerModalOverLay {
+  background-color: rgba(0, 0, 0, 0.48);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.x {
+  text-align: center;
+  padding-top: 50px;
+  font-size: 80px;
+}
+
+.winner {
+  text-align: center;
+  font-size: 50px;
+}
+
+.resetWrapperModal{
+  text-align: center;
+  padding: 50px;
+  height: 30px;
+}
+
+.resetModal{
+  font-size: 18px;
+  border: 1px solid #868686;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.resetModal:hover{
+  box-shadow: 6px -5px 29px -4px rgba(0,0,0,0.23);
+  padding: 11px;
+  font-size: 20px;
 }

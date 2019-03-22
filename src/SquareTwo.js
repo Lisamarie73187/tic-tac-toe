@@ -240,14 +240,26 @@ class Square extends Component {
         return (
             <div>
                 {this.state.xWinner &&
-                    <div className="winnerModal">
-                        <div>X is the WINNER!!!</div>
+                    <div className="winnerModalOverLay">
+                        <div className="winnerModal">
+                            <div className="x">X</div>
+                            <div className="winner">is the WINNER!!!</div>
+                            <div className="resetWrapperModal" onClick={this.startGame}>
+                                <div className="resetModal">Reset</div>
+                            </div>
+                        </div>
                     </div>
                 }
                 {this.state.oWinner &&
-                <div className="winnerModal">
-                    <div>O is the WINNER!!!</div>
-                </div>
+                    <div className="winnerModalOverLay">
+                        <div className="winnerModal">
+                            <div className="x">O</div>
+                            <div className="winner">is the WINNER!!!</div>
+                            <div className="resetWrapperModal" onClick={this.startGame}>
+                                <div className="resetModal">Reset</div>
+                            </div>
+                        </div>
+                    </div>
                 }
                 <div className="title">The Most Amazing Tic-Tac-Toe Ever</div>
                 {this.state.startGame === 'choose' && (
