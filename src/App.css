@@ -133,7 +133,8 @@
 
 .x {
   text-align: center;
-  padding-top: 50px;
+  padding-top: 20px;
+  padding-bottom: 10px;
   font-size: 80px;
 }
 
@@ -144,8 +145,8 @@
 
 .resetWrapperModal{
   text-align: center;
-  padding: 50px;
-  height: 30px;
+  padding: 30px;
+  height: 35px;
 }
 
 .resetModal{
@@ -160,4 +161,11 @@
   box-shadow: 6px -5px 29px -4px rgba(0,0,0,0.23);
   padding: 11px;
   font-size: 20px;
+}
+
+.close {
+  text-align: right;
+  padding-top: 20px;
+  padding-right: 20px;
+  cursor: pointer;
 }

@@ -235,6 +235,23 @@ class Square extends Component {
 
     }
 
+    close = () => {
+        this.setState({
+            xWinner: false,
+            oWinner: false,
+            player: '',
+            one: '',
+            two: '',
+            three: '',
+            four: '',
+            five: '',
+            six: '',
+            seven: '',
+            eight: '',
+            nine: '',
+        })
+    }
+
 
     render() {
         return (
@@ -242,6 +259,7 @@ class Square extends Component {
                 {this.state.xWinner &&
                     <div className="winnerModalOverLay">
                         <div className="winnerModal">
+                            <div className="close" onClick={this.close}>X</div>
                             <div className="x">X</div>
                             <div className="winner">is the WINNER!!!</div>
                             <div className="resetWrapperModal" onClick={this.startGame}>
@@ -253,6 +271,7 @@ class Square extends Component {
                 {this.state.oWinner &&
                     <div className="winnerModalOverLay">
                         <div className="winnerModal">
+                            <div className="close" onClick={this.close}>X</div>
                             <div className="x">O</div>
                             <div className="winner">is the WINNER!!!</div>
                             <div className="resetWrapperModal" onClick={this.startGame}>
