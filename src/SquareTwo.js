@@ -22,10 +22,18 @@ class Square extends Component {
         }
     }
 
+    componentDidUpdate(prevProps, prevState) {
+        if(prevState.player !== this.state.player){
+            this.checkWinner()
+        }
+    }
+
 
     startGame = () => {
         this.setState({
             startGame: 'choose',
+            xWinner: false,
+            oWinner: false,
             player: '',
             one: '',
             two: '',
@@ -35,7 +43,7 @@ class Square extends Component {
             six: '',
             seven: '',
             eight: '',
-            nine: ''
+            nine: '',
         })
     };
 
@@ -46,9 +54,201 @@ class Square extends Component {
         })
     };
 
+    nextPlayer = () => {
+        if(this.state.player === 'X'){
+            this.setState({
+                player: 'O'
+            })
+        }
+        if(this.state.player === 'O'){
+            this.setState({
+                player: 'X'
+            })
+        }
+    }
+
+    moveOne = () => {
+        this.setState({
+            one: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveTwo = () => {
+        this.setState({
+            two: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveThree = () => {
+        this.setState({
+            three: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveFour = () => {
+        this.setState({
+            four: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveFive = () => {
+        this.setState({
+            five: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveSix = () => {
+        this.setState({
+            six: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveSeven = () => {
+        this.setState({
+            seven: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveEight = () => {
+        this.setState({
+            eight: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    moveNine = () => {
+        this.setState({
+            nine: this.state.player
+        })
+        this.nextPlayer()
+    };
+
+    checkWinner = () => {
+        const {one, two, three, four, five, six, seven, eight, nine} = this.state
+        if(one === 'X' & two === 'X' & three === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(one === 'O' & two === 'O' & three === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(one === 'X' & four === 'X' & seven === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(one === 'O' & four === 'O' & seven === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(one === 'X' & five === 'X' & nine === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(one === 'O' & five === 'O' & nine === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(two === 'X' & five === 'X' & eight === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(two === 'O' & five === 'O' & eight === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+
+        if(three === 'X' & five === 'X' & seven === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(three === 'O' & five === 'O' & seven === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+
+        if(three === 'X' & six === 'X' & nine === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(three === 'O' & six === 'O' & nine === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+
+        if(four === 'X' & five === 'X' & six === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(four === 'O' & five === 'O' & six === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+
+        if(seven === 'X' & eight === 'X' & nine === 'X'){
+            this.setState({
+                xWinner: true,
+                startGame: 'start'
+            })
+        }
+        if(seven === 'O' & eight === 'O' & nine === 'O'){
+            this.setState({
+                oWinner: true,
+                startGame: 'start'
+            })
+        }
+
+    }
+
+
     render() {
         return (
             <div>
+                {this.state.xWinner &&
+                    <div className="winnerModal">
+                        <div>X is the WINNER!!!</div>
+                    </div>
+                }
+                {this.state.oWinner &&
+                <div className="winnerModal">
+                    <div>O is the WINNER!!!</div>
+                </div>
+                }
                 <div className="title">The Most Amazing Tic-Tac-Toe Ever</div>
                 {this.state.startGame === 'choose' && (
                     <div className="selectWrapper">
@@ -58,7 +258,7 @@ class Square extends Component {
                         <div className="letsPlayWrapper">
                             <div className="letsPlayX" onClick={() => this.setPlayer('X')}>X</div>
                             or
-                            <div className="letsPlayO" onClick={() => this.setPlayer('0')}>O</div>
+                            <div className="letsPlayO" onClick={() => this.setPlayer('O')}>O</div>
                         </div>
                     </div>
                 )}
@@ -73,15 +273,15 @@ class Square extends Component {
                     </div>
                 )}
                 <div className="board">
-                    <div className="square" >{this.state.one}</div>
-                    <div className="square" >{this.state.two}</div>
-                    <div className="square" >{this.state.three}</div>
-                    <div className="square" >{this.state.four}</div>
-                    <div className="square" >{this.state.five}</div>
-                    <div className="square" >{this.state.six}</div>
-                    <div className="square" >{this.state.seven}</div>
-                    <div className="square" >{this.state.eight}</div>
-                    <div className="square" >{this.state.nine}</div>
+                    <div className="square" onClick={this.moveOne}>{this.state.one}</div>
+                    <div className="square" onClick={this.moveTwo}>{this.state.two}</div>
+                    <div className="square" onClick={this.moveThree}>{this.state.three}</div>
+                    <div className="square" onClick={this.moveFour}>{this.state.four}</div>
+                    <div className="square" onClick={this.moveFive}>{this.state.five}</div>
+                    <div className="square" onClick={this.moveSix}>{this.state.six}</div>
+                    <div className="square" onClick={this.moveSeven}>{this.state.seven}</div>
+                    <div className="square" onClick={this.moveEight}>{this.state.eight}</div>
+                    <div className="square" onClick={this.moveNine}>{this.state.nine}</div>
                 </div>
             </div>
         )
